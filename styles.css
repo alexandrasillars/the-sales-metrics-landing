@@ -185,6 +185,15 @@ h1 span { color: var(--blue); }
   align-items: center;
   min-width: 0;
 }
+.product-screenshot {
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 18px;
+  background: #f8fafc;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, .62);
+  transform: rotate(1.4deg);
+}
 .app-preview {
   display: grid;
   grid-template-columns: 170px 1fr;
@@ -664,6 +673,7 @@ h1 span { color: var(--blue); }
   .site-header { grid-template-columns: 1fr auto; }
   .nav-links { display: none; }
   .hero { grid-template-columns: 1fr; padding-top: 110px; }
+  .product-screenshot { transform: none; }
   .app-preview { transform: none; }
   .problem-grid { grid-template-columns: repeat(2, 1fr); }
   .workspace-grid,
