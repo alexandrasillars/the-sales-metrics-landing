@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Overview | The Sales Metrics — Funding Dialer & CRM Workspace</title>
+  <meta name="description" content="The Sales Metrics combines a power dialer, CRM pipeline, document collection, email tools, callbacks, and reporting into one workspace built for MCA and business funding teams.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Page-specific overrides */
+    .page-hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 140px clamp(22px, 4vw, 64px) 80px;
+      color: var(--text);
+      background: #030713;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(47,103,255,.14), transparent);
+    }
+    .page-hero > * { position: relative; z-index: 1; }
+    .page-hero h1 { margin-bottom: 22px; font-size: clamp(40px, 5.5vw, 72px); line-height: .96; }
+    .page-hero h1 span { color: var(--blue); }
+    .page-hero > p { max-width: 620px; margin-bottom: 34px; color: #d8e0ef; font-size: 18px; line-height: 1.55; }
+
+    .features-section {
+      width: min(1160px, calc(100% - 44px));
+      margin: 0 auto;
+      padding: 60px 0;
+    }
+    .features-section .section-label {
+      margin: 0 0 12px;
+      color: var(--blue-2, #6ea1ff);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .features-section h2 {
+      margin-bottom: 44px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.08;
+    }
+    .features-section h2 span { color: var(--blue); }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .feature-card {
+      padding: 28px;
+      border: 1px solid #dce3ef;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 12px 32px rgba(19,33,56,.05);
+    }
+    .feature-card .icon {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      margin-bottom: 18px;
+      border-radius: 10px;
+      color: #fff;
+      background: var(--blue);
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .feature-card h3 { margin-bottom: 10px; font-size: 17px; }
+    .feature-card p { margin: 0; color: #5c6677; font-size: 14px; line-height: 1.55; }
+
+    .dark-section {
+      color: #fff;
+      background: #050914;
+      border-radius: 14px;
+      padding: 52px;
+      margin-bottom: 22px;
+    }
+    .dark-section h2 { color: #fff; }
+    .dark-section .feature-card {
+      background: var(--panel, #0a1426);
+      border-color: var(--line, rgba(255,255,255,.14));
+      color: #fff;
+    }
+    .dark-section .feature-card h3 { color: #fff; }
+    .dark-section .feature-card p { color: #c4cfdf; }
+
+    .full-width-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 72px clamp(22px, 4vw, 64px);
+      color: #fff;
+      background: #050914;
+    }
+    .full-width-cta h2 { margin-bottom: 16px; font-size: clamp(28px, 4vw, 42px); line-height: 1.1; }
+    .full-width-cta p { max-width: 520px; margin-bottom: 32px; color: #c4cfdf; font-size: 17px; line-height: 1.55; }
+
+    .page-footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 26px clamp(22px, 4vw, 64px);
+      color: #aab4c5;
+      background: #050914;
+      border-top: 1px solid rgba(255,255,255,.08);
+      font-size: 13px;
+    }
+    .page-footer a:hover { color: #fff; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 22px; }
+    .footer-brand { color: #fff; font-weight: 900; font-size: 14px; }
+
+    .highlight-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+    .highlight-row.reverse { direction: rtl; }
+    .highlight-row.reverse > * { direction: ltr; }
+    .highlight-text h3 { font-size: 26px; margin-bottom: 14px; line-height: 1.15; }
+    .highlight-text p { color: #5c6677; font-size: 15px; line-height: 1.6; margin-bottom: 18px; }
+    .highlight-visual {
+      display: grid;
+      place-items: center;
+      min-height: 240px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #0a1426, #0e1b31);
+      border: 1px solid rgba(47,103,255,.2);
+      color: #fff;
+      font-weight: 900;
+      font-size: 14px;
+    }
+    .highlight-visual .big-icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+      opacity: .7;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin: 50px 0;
+    }
+    .stat-box {
+      text-align: center;
+      padding: 28px 18px;
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid #dce3ef;
+    }
+    .stat-box strong { display: block; font-size: 32px; color: var(--blue); margin-bottom: 6px; }
+    .stat-box span { color: #5c6677; font-size: 13px; }
+
+    @media (max-width: 1050px) {
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .highlight-row, .highlight-row.reverse { grid-template-columns: 1fr; }
+      .stat-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 720px) {
+      .feature-grid, .stat-row { grid-template-columns: 1fr; }
+      .dark-section { padding: 28px 18px; }
+      .page-footer { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="The Sales Metrics home">
+      <span class="brand-mark">SM</span>
+      <span>
+        <strong>The Sales Metrics</strong>
+        <small>Outbound workspace for funding teams</small>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="/product.html">Product</a>
+      <a href="/for-sales.html">For Sales</a>
+      <a href="/for-admins.html">For Admins</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#resources">Resources</a>
+    </nav>
+    <a class="header-action" href="mailto:alexandra@lexcapitalgroup.net?subject=The%20Sales%20Metrics%20demo">Book a Demo</a>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="page-hero">
+      <p class="eyebrow">Product Overview</p>
+      <h1>Everything your funding team needs.<br><span>One workspace.</span></h1>
+      <p>The Sales Metrics replaces your dialer, CRM, email tools, doc collection, and spreadsheets with a single platform built specifically for MCA and business funding teams.</p>
+      <div class="hero-actions">
+        <a class="primary-action" href="mailto:alexandra@lexcapitalgroup.net?subject=The%20Sales%20Metrics%20demo">Book a Demo <span>&rarr;</span></a>
+        <a class="secondary-action" href="/#pricing">See Pricing</a>
+      </div>
+    </section>
+
+    <!-- Core Features -->
+    <section class="features-section">
+      <p class="section-label">Core Platform</p>
+      <h2>Six tools in one. <span>Zero switching.</span></h2>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="icon">&#9742;</div>
+          <h3>Power Dialer with Auto-Next</h3>
+          <p>Reps get a focused call queue that automatically loads the next lead after each disposition. No downtime between calls. Cellphone fallback dials mobile numbers when the main line doesn't connect.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon">&#9881;</div>
+          <h3>CRM Pipeline</h3>
+          <p>Every lead moves through clear funding stages — from new to submitted, approved, and funded. Reps see their pipeline at a glance. Managers see the whole company's deals in one view.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon">&#9993;</div>
+          <h3>Email Tools</h3>
+          <p>Send follow-up emails and document requests directly from the lead record. No switching to Outlook or Gmail. Every email is logged to the deal timeline automatically.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon">&#128196;</div>
+          <h3>Document Collection</h3>
+          <p>Request bank statements, applications, and tax returns with one click. Track which documents have been received and which are still outstanding — all tied to the deal.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon">&#128337;</div>
+          <h3>Callbacks & Follow-Ups</h3>
+          <p>Schedule callbacks that appear in the rep's queue at the right time. Follow-ups never slip through the cracks. The system reminds reps and surfaces overdue tasks automatically.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon">&#128202;</div>
+          <h3>Reporting & Analytics</h3>
+          <p>Real-time dashboards show calls made, conversations had, deals moved, and revenue generated. Managers get team-wide metrics. Reps see their own performance. Export any report in seconds.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="features-section">
+      <div class="dark-section">
+        <p class="section-label" style="color: var(--blue-2);">How It Works</p>
+        <h2>From lead upload to funded deal. <span>One workflow.</span></h2>
+
+        <div class="highlight-row" style="margin-top: 40px;">
+          <div class="highlight-text" style="color: #fff;">
+            <h3 style="color: #fff;">1. Upload & Distribute Leads</h3>
+            <p style="color: #c4cfdf;">Import leads via CSV or connect your lead sources. Admins distribute leads to reps by campaign, territory, or round-robin. Every lead starts with a clean record.</p>
+          </div>
+          <div class="highlight-visual">
+            <div>
+              <div class="big-icon">&#128229;</div>
+              <div>CSV &rarr; Campaign &rarr; Rep Queue</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-row reverse">
+          <div class="highlight-text" style="color: #fff;">
+            <h3 style="color: #fff;">2. Call, Disposition & Move Forward</h3>
+            <p style="color: #c4cfdf;">Reps work their queue. Each call gets a disposition — interested, callback, not interested, voicemail. Interested leads move to the next stage. The dialer loads the next lead automatically.</p>
+          </div>
+          <div class="highlight-visual">
+            <div>
+              <div class="big-icon">&#9742;</div>
+              <div>Call &rarr; Disposition &rarr; Auto-Next</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-row">
+          <div class="highlight-text" style="color: #fff;">
+            <h3 style="color: #fff;">3. Collect Docs & Submit Deals</h3>
+            <p style="color: #c4cfdf;">Request documents with one click. Track what's been received. When the file is complete, submit it to your funder — all without leaving the platform.</p>
+          </div>
+          <div class="highlight-visual">
+            <div>
+              <div class="big-icon">&#128196;</div>
+              <div>Request &rarr; Receive &rarr; Submit</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-row reverse">
+          <div class="highlight-text" style="color: #fff;">
+            <h3 style="color: #fff;">4. Track, Report & Grow</h3>
+            <p style="color: #c4cfdf;">Every action is tracked. Managers see real-time dashboards with rep activity, pipeline value, and conversion rates. Use the data to coach reps and scale what works.</p>
+          </div>
+          <div class="highlight-visual">
+            <div>
+              <div class="big-icon">&#128202;</div>
+              <div>Dashboards &rarr; Insights &rarr; Growth</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Built for Funding Teams -->
+    <section class="features-section">
+      <p class="section-label">Built for Funding</p>
+      <h2>Not a generic CRM. <span>Built for how funding teams actually work.</span></h2>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <strong>6-in-1</strong>
+          <span>Tools replaced</span>
+        </div>
+        <div class="stat-box">
+          <strong>0</strong>
+          <span>Missed callbacks</span>
+        </div>
+        <div class="stat-box">
+          <strong>1-click</strong>
+          <span>Doc requests</span>
+        </div>
+        <div class="stat-box">
+          <strong>Real-time</strong>
+          <span>Pipeline visibility</span>
+        </div>
+      </div>
+
+      <div class="feature-grid" style="grid-template-columns: repeat(2, 1fr);">
+        <article class="feature-card">
+          <h3>MCA & Funding Stage Pipeline</h3>
+          <p>Stages designed for funding workflows: new lead, contacted, interested, docs requested, docs received, submitted, approved, funded. Every stage matches how your team already thinks about deals.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Two Workspaces, One Platform</h3>
+          <p>Sales reps get a streamlined workspace built for speed — call queue, dispositions, doc requests, and follow-ups. Admins get dashboards, lead distribution, rep metrics, and pipeline reporting. Same data, different views.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="full-width-cta">
+      <h2>Ready to simplify your funding operation?</h2>
+      <p>Book a demo and see how The Sales Metrics gives your team one workspace to call, track, collect docs, and close more deals.</p>
+      <div class="hero-actions">
+        <a class="primary-action" href="mailto:alexandra@lexcapitalgroup.net?subject=The%20Sales%20Metrics%20demo">Book a Demo <span>&rarr;</span></a>
+        <a class="secondary-action" href="/#pricing">See Pricing</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <span class="footer-brand">The Sales Metrics</span>
+    <div class="footer-links">
+      <a href="/product.html">Product</a>
+      <a href="/for-sales.html">For Sales</a>
+      <a href="/for-admins.html">For Admins</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="mailto:alexandra@lexcapitalgroup.net?subject=The%20Sales%20Metrics%20demo">Book a Demo</a>
+      <a href="/#terms">Terms</a>
+      <a href="/#privacy">Privacy</a>
+      <a href="mailto:alexandra@lexcapitalgroup.net?subject=Contact%20The%20Sales%20Metrics">Contact</a>
+    </div>
+  </footer>
+</body>
+</html>

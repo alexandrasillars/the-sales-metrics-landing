@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>For Admins & Managers | The Sales Metrics — Real-Time Team Visibility</title>
+  <meta name="description" content="The Sales Metrics gives funding team managers real-time dashboards, rep performance metrics, lead distribution, pipeline visibility, campaign management, and exportable reports.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 140px clamp(22px, 4vw, 64px) 80px;
+      color: var(--text);
+      background: #030713;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(34,198,107,.1), transparent);
+    }
+    .page-hero > * { position: relative; z-index: 1; }
+    .page-hero h1 { margin-bottom: 22px; font-size: clamp(40px, 5.5vw, 72px); line-height: .96; }
+    .page-hero h1 span { color: var(--green, #22c66b); }
+    .page-hero > p { max-width: 620px; margin-bottom: 34px; color: #d8e0ef; font-size: 18px; line-height: 1.55; }
+
+    .features-section {
+      width: min(1160px, calc(100% - 44px));
+      margin: 0 auto;
+      padding: 60px 0;
+    }
+    .features-section .section-label {
+      margin: 0 0 12px;
+      color: var(--green, #22c66b);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .features-section h2 {
+      margin-bottom: 44px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.08;
+    }
+    .features-section h2 span { color: var(--green, #22c66b); }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .feature-card {
+      padding: 28px;
+      border: 1px solid #dce3ef;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 12px 32px rgba(19,33,56,.05);
+    }
+    .feature-card .icon {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      margin-bottom: 18px;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .feature-card .icon.green { background: var(--green, #22c66b); }
+    .feature-card .icon.blue { background: var(--blue); }
+    .feature-card h3 { margin-bottom: 10px; font-size: 17px; }
+    .feature-card p { margin: 0; color: #5c6677; font-size: 14px; line-height: 1.55; }
+
+    .dashboard-section {
+      width: min(1160px, calc(100% - 44px));
+      margin: 0 auto;
+      padding: 0 0 60px;
+    }
+    .dashboard-mockup {
+      border-radius: 14px;
+      background: #050914;
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 32px;
+      color: #fff;
+    }
+    .dashboard-mockup .section-label {
+      margin: 0 0 12px;
+      color: var(--green, #22c66b);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .dashboard-mockup h2 {
+      margin-bottom: 32px;
+      font-size: clamp(24px, 3.5vw, 36px);
+      line-height: 1.08;
+    }
+    .dashboard-mockup h2 span { color: var(--green, #22c66b); }
+    .dash-stats {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .dash-stat {
+      padding: 20px;
+      border-radius: 10px;
+      background: var(--panel, #0a1426);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .dash-stat strong {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+    .dash-stat strong.green-num { color: var(--green, #22c66b); }
+    .dash-stat strong.blue-num { color: var(--blue-2, #6ea1ff); }
+    .dash-stat strong.white-num { color: #fff; }
+    .dash-stat span { color: #aab4c5; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+
+    .dash-panels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .dash-panel {
+      padding: 22px;
+      border-radius: 10px;
+      background: var(--panel, #0a1426);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .dash-panel h4 { margin-bottom: 16px; font-size: 14px; color: #dbe6fb; }
+    .rep-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      font-size: 13px;
+    }
+    .rep-row:last-child { border-bottom: none; }
+    .rep-row .name { color: #fff; font-weight: 700; }
+    .rep-row .metric { color: var(--green, #22c66b); font-weight: 900; }
+    .rep-row .sub { color: #aab4c5; font-size: 12px; }
+
+    .pipeline-bar {
+      display: flex;
+      height: 32px;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .pipeline-bar div { display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; color: #fff; }
+    .pipeline-bar .stage-new { background: #2f67ff; flex: 3; }
+    .pipeline-bar .stage-contacted { background: #6ea1ff; flex: 2.5; }
+    .pipeline-bar .stage-docs { background: #22c66b; flex: 1.5; }
+    .pipeline-bar .stage-submitted { background: #f5ba22; flex: 1; }
+    .pipeline-bar .stage-funded { background: #17b861; flex: 0.5; }
+    .pipeline-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .pipeline-legend span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #aab4c5;
+      font-size: 12px;
+    }
+    .pipeline-legend span::before {
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+    }
+    .legend-new::before { background: #2f67ff !important; }
+    .legend-contacted::before { background: #6ea1ff !important; }
+    .legend-docs::before { background: #22c66b !important; }
+    .legend-submitted::before { background: #f5ba22 !important; }
+    .legend-funded::before { background: #17b861 !important; }
+
+    .use-cases {
+      width: min(1160px, calc(100% - 44px));
+      margin: 0 auto;
+      padding: 60px 0;
+    }
+    .use-cases h2 {
+      text-align: center;
+      margin-bottom: 44px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.08;
+    }
+    .use-cases h2 span { color: var(--green, #22c66b); }
+    .use-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+    .use-card {
+      padding: 28px;
+      border-radius: 10px;
+      background: #050914;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .use-card h3 { margin-bottom: 10px; font-size: 17px; color: #fff; }
+    .use-card p { margin: 0; color: #c4cfdf; font-size: 14px; line-height: 1.55; }
+    .use-card .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      margin-bottom: 14px;
+      border-radius: 999px;
+      background: rgba(34,198,107,.15);
+      color: var(--green, #22c66b);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .full-width-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 72px clamp(22px, 4vw, 64px);
+      color: #fff;
+      background: #050914;
+    }
+    .full-width-cta h2 { margin-bottom: 16px; font-size: clamp(28px, 4vw, 42px); line-height: 1.1; }
+    .full-width-cta p { max-width: 520px; margin-bottom: 32px; color: #c4cfdf; font-size: 17px; line-height: 1.55; }
+
+    .page-footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 26px clamp(22px, 4vw, 64px);
+      color: #aab4c5;
+      background: #050914;
+      border-top: 1px solid rgba(255,255,255,.08);
+      font-size: 13px;
+    }
+    .page-footer a:hover { color: #fff; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 22px; }
+    .footer-brand { color: #fff; font-weight: 900; font-size: 14px; }
+
+    @media (max-width: 1050px) {
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .dash-stats { grid-template-columns: repeat(3, 1fr); }
+      .dash-panels, .use-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .feature-grid, .dash-stats { grid-template-columns: 1fr; }
+      .page-footer { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+      .dashboard-mockup { padding: 18px; }
+      .use-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="The Sales Metrics home">
+      <span class="brand-mark">SM</span>
+      <span>
+        <strong>The Sales Metrics</strong>
+        <small>Outbound workspace for funding teams</small>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="/product.html">Product</a>
+      <a href="/for-sales.html">For Sales</a>
+      <a href="/for-admins.html">For Admins</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#resources">Resources</a>
+    </nav>
+    <a class="header-action" href="mailto:alexandra@lexcapitalgroup.net?subject=The%20Sales%20Metrics%20demo">Book a Demo</a>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="page-hero">
+      <p class="eyebrow" style="color: var(--green, #22c66b);">For Admins & Managers</p>
+      <h1>See everything.<br><span>Control everything.</span></h1>
+      <p>Real-time dashboards, rep performance metrics, lead distribution, pipeline visibility, and campaign management — all without interrupting your team's workflow.</p>
+      <div class="hero-actions">
+        <a class="primary-action" href="mailto:alexandra@lexcapitalgroup.net?subject=The%20Sales%20Metrics%20demo%20-%20Admin" style="background: var(--green, #22c66b); box-shadow: 0 16px 42px rgba(34,198,107,.35);">Book a Demo <span>&rarr;</span></a>
+        <a class="secondary-action" href="/product.html">See All Features</a>
+      </div>
+    </section>
+
+    <!-- Admin Features -->
+    <section class="features-section">
+      <p class="section-label">Admin Toolkit</p>
+      <h2>Manage your team with <span>clarity, not guesswork.</span></h2>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="icon green">&#128200;</div>
+          <h3>Real-Time Dashboard</h3>
+          <p>See live activity across your entire team. Calls being made right now, deals moving through stages, callbacks due, and docs outstanding — all updating in real time without refreshing.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon green">&#128101;</div>
+          <h3>Rep Performance Metrics</h3>
+          <p>Track calls made, conversations had, deals moved, and revenue generated per rep. Compare performance across the team. Identify top performers and reps who need coaching — backed by real data.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon green">&#128229;</div>
+          <h3>Lead Distribution</h3>
+          <p>Upload leads via CSV and distribute them to reps by campaign, territory, or round-robin. Control who gets what leads and how many. Redistribute leads when reps are out or overloaded.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon blue">&#128736;</div>
+          <h3>Pipeline Visibility</h3>
+          <p>See every deal in the pipeline by stage — from new lead through funded. Filter by rep, campaign, date range, or status. Know exactly where your revenue is and where deals are getting stuck.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon blue">&#127919;</div>
+          <h3>Campaign Management</h3>
+          <p>Create campaigns, assign lead lists, and track results by source. See which campaigns produce the most conversations and which convert to funded deals. Double down on what works.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon blue">&#128230;</div>
+          <h3>Export & Reporting</h3>
+          <p>Export any report, any view, any time. Pull call logs, pipeline snapshots, rep scorecards, or campaign results into CSV for your own analysis or for sharing with partners and funders.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Dashboard Mockup -->
+    <section class="dashboard-section">
+      <div class="dashboard-mockup">
+        <p class="section-label">Live Dashboard Preview</p>
+        <h2>Your team's performance. <span>At a glance.</span></h2>
+
+        <div class="dash-stats">
+          <div class="dash-stat">
+            <strong class="green-num">847</strong>
+            <span>Calls Today</span>
+          </div>
+          <div class="dash-stat">
+            <strong class="blue-num">134</strong>
+            <span>Conversations</span>
+          </div>
+          <div class="dash-stat">
+            <strong class="white-num">42</strong>
+            <span>Docs Requested</span>
+          </div>
+          <div class="dash-stat">
+            <strong class="green-num">18</strong>
+            <span>Docs Received</span>
+          </div>
+          <div class="dash-stat">
+            <strong class="blue-num">6</strong>
+            <span>Deals Submitted</span>
+          </div>
+        </div>
+
+        <div class="dash-panels">
+          <div class="dash-panel">
+            <h4>Rep Leaderboard — Today</h4>
+            <div class="rep-row">
+              <span class="name">Marcus T.</span>
+              <span><span class="metric">142 calls</span> <span class="sub">&middot; 24 convos</span></span>
+            </div>
+            <div class="rep-row">
+              <span class="name">Jessica R.</span>
+              <span><span class="metric">128 calls</span> <span class="sub">&middot; 19 convos</span></span>
+            </div>
+            <div class="rep-row">
+              <span class="name">David K.</span>
+              <span><span class="metric">119 calls</span> <span class="sub">&middot; 22 convos</span></span>
+            </div>
+            <div class="rep-row">
+              <span class="name">Sarah M.</span>
+              <span><span class="metric">108 calls</span> <span class="sub">&middot; 18 convos</span></span>
+            </div>
+            <div class="rep-row">
+              <span class="name">Chris L.</span>
+              <span><span class="metric">97 calls</span> <span class="sub">&middot; 14 convos</span></span>
+            </div>
+          </div>
+          <div class="dash-panel">
+            <h4>Pipeline by Stage</h4>
+            <div class="pipeline-bar">
+              <div class="stage-new">New</div>
+              <div class="stage-contacted">Contact</div>
+              <div class="stage-docs">Docs</div>
+              <div class="stage-submitted">Sub</div>
+              <div class="stage-funded">$</div>
+            </div>
+            <div class="pipeline-legend">
+              <span class="legend-new">New (312)</span>
+              <span class="legend-contacted">Contacted (248)</span>
+              <span class="legend-docs">Docs (89)</span>
+              <span class="legend-submitted">Submitted (47)</span>
+              <span class="legend-funded">Funded (23)</span>
+            </div>
+            <div style="margin-top: 22px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.08);">
+              <div class="rep-row">
+                <span class="name">Est. Pipeline Value</span>
+                <span class="metric">$1.42M</span>
+              </div>
+              <div class="rep-row">
+                <span class="name">Funded This Month</span>
+                <span class="metric">$380K</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="use-cases">
+      <h2>Built for the questions <span>managers actually ask.</span></h2>
+      <div class="use-grid">
+        <div class="use-card">
+          <span class="tag">Activity</span>
+          <h3>"Are my reps actually on the phone?"</h3>
+          <p>See live call activity across your team. Know who's dialing, who's idle, and who's behind on their daily target — without walking over to check. Real-time numbers, not self-reported guesses.</p>
+        </div>
+        <div class="use-card">
+          <span class="tag">Pipeline</span>
+          <h3>"Where are our deals stuck?"</h3>
+          <p>Filter the pipeline by stage and see where deals are piling up. If 40 files are stuck at "docs requested" for more than 3 days, you know where to focus. The data tells you what needs attention.</p>
+        </div>
+        <div class="use-card">
+          <span class="tag">Performance</span>
+          <h3>"Who should I promote? Who needs coaching?"</h3>
+          <p>Compare reps on calls made, conversations per hour, deals submitted, and deals funded. You'll see the full picture — not just who talks the loudest in meetings, but who actually produces results.</p>
+        </div>
+        <div class="use-card">
+          <span class="tag">Campaigns</span>
+          <h3>"Which lead sources are worth paying for?"</h3>
+          <p>Track results by campaign and lead source. Know your cost per conversation and cost per funded deal for every list you buy. Stop paying for leads that don't convert and double down on what works.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="full-width-cta">
+      <h2>Ready to see what your team is really doing?</h2>
+      <p>Book a demo and we'll walk you through the admin dashboard, rep metrics, lead distribution, and pipeline reporting built for funding team managers.</p>
+      <div class="hero-actions">
+        <a class="primary-action" href="mailto:alexandra@lexcapitalgroup.net?subject=The%20Sales%20Metrics%20demo%20-%20Admin" style="background: var(--green, #22c66b); box-shadow: 0 16px 42px rgba(34,198,107,.35);">Book a Demo <span>&rarr;</span></a>
+        <a class="secondary-action" href="/for-sales.html">See Sales Workspace</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <span class="footer-brand">The Sales Metrics</span>
+    <div class="footer-links">
+      <a href="/product.html">Product</a>
+      <a href="/for-sales.html">For Sales</a>
+      <a href="/for-admins.html">For Admins</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="mailto:alexandra@lexcapitalgroup.net?subject=The%20Sales%20Metrics%20demo">Book a Demo</a>
+      <a href="/#terms">Terms</a>
+      <a href="/#privacy">Privacy</a>
+      <a href="mailto:alexandra@lexcapitalgroup.net?subject=Contact%20The%20Sales%20Metrics">Contact</a>
+    </div>
+  </footer>
+</body>
+</html>
