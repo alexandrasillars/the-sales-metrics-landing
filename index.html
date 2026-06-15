@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Sales Metrics | The Tools Your Sales Floor Is Missing</title>
-  <meta name="description" content="The Sales Metrics is the outbound workspace funding teams have been missing — dialer, CRM, doc collection, follow-ups, and pipeline in one place. Built by someone who's been on the phones for 12 years.">
+  <title>The Sales Metrics | Funding Dialer and CRM Workspace</title>
+  <meta name="description" content="The Sales Metrics is an outbound workspace for funding teams: dialer, CRM pipeline, documents, follow-ups, reporting, and email tools in one platform.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,13 +13,13 @@
       <span class="brand-mark">SM</span>
       <span>
         <strong>The Sales Metrics</strong>
-        <small>The tools your sales floor is missing</small>
+        <small>Outbound workspace for funding teams</small>
       </span>
     </a>
     <nav class="nav-links" aria-label="Primary navigation">
-      <a href="/product.html">Product</a>
-      <a href="/for-sales.html">For Sales</a>
-      <a href="/for-admins.html">For Admins</a>
+      <a href="#product">Product</a>
+      <a href="#sales">For Sales</a>
+      <a href="#admins">For Admins</a>
       <a href="#pricing">Pricing</a>
       <a href="#resources">Resources</a>
     </nav>
@@ -29,9 +29,9 @@
   <main id="top">
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">Built by a closer. Not a tech company.</p>
-        <h1>The tools your<br><span>sales floor</span><br>is missing.</h1>
-        <p>Your back office has a system. Your sales floor doesn't. The Sales Metrics gives every rep one workspace to call, follow up, collect docs, and move deals to funding — without switching between five different tools.</p>
+        <p class="eyebrow">Built for reps. Powerful for managers.</p>
+        <h1>One workspace.<br><span>Built for the way</span><br>funding teams sell.</h1>
+        <p>Stop juggling dialers, CRMs, spreadsheets, and email tools. The Sales Metrics gives your team one place to call, track, collect docs, and move deals forward.</p>
         <div class="hero-actions">
           <a class="primary-action" href="mailto:alexandra@lexcapitalgroup.net?subject=The%20Sales%20Metrics%20demo">Book a Demo <span>-></span></a>
           <a class="secondary-action" href="#demo">Watch Workflow <span>Play</span></a>
@@ -39,64 +39,140 @@
         <div class="hero-points">
           <article>
             <span>01</span>
-            <strong>12 years on the phones</strong>
-            <small>Built by someone who actually dials.</small>
+            <strong>Rep-first design</strong>
+            <small>Built for speed and daily activity.</small>
           </article>
           <article>
             <span>02</span>
-            <strong>First call to funded deal</strong>
-            <small>Everything between the dial and the submission.</small>
+            <strong>End-to-end workflow</strong>
+            <small>Call, track, follow up, collect docs, fund.</small>
           </article>
           <article>
             <span>03</span>
-            <strong>Nothing falls through</strong>
-            <small>Callbacks, docs, follow-ups — all tracked.</small>
+            <strong>Visibility for leaders</strong>
+            <small>Real-time metrics without slowing your team down.</small>
           </article>
         </div>
       </div>
 
-      <div class="hero-product" aria-label="The Sales Metrics product preview">
-        <img class="product-screenshot" src="assets/dialer-preview-redacted.png" alt="The Sales Metrics dialer workspace preview">
+      <div class="hero-product" aria-label="Interactive The Sales Metrics product preview">
+        <div class="interactive-preview" data-active-preview="dialer">
+          <aside class="preview-rail">
+            <div class="preview-logo">
+              <span>SM</span>
+              <strong>Lex Capital Dialer</strong>
+              <small>Hosted team workspace</small>
+            </div>
+            <div class="preview-field">
+              <small>Agent name</small>
+              <span>alexandra</span>
+            </div>
+            <div class="preview-checks">
+              <span>Auto-call next lead</span>
+              <span>Try cellphone after landline</span>
+              <span>Call cellphones twice</span>
+            </div>
+            <button type="button">Pause auto-next</button>
+            <button type="button">Upload my leads</button>
+          </aside>
+
+          <section class="preview-workspace">
+            <div class="preview-header">
+              <div>
+                <h3 data-preview-title>Dialer</h3>
+                <p data-preview-subtitle>1,913 open, 1,461 completed.</p>
+              </div>
+              <button type="button">Export results</button>
+            </div>
+
+            <div class="preview-nav" role="tablist" aria-label="Preview sections">
+              <button class="is-active" type="button" data-preview-tab="dialer">Dialer</button>
+              <button type="button" data-preview-tab="pipeline">CRM Pipeline</button>
+              <button type="button" data-preview-tab="enrichment">Lead Enricher</button>
+              <button type="button" data-preview-tab="campaigns">Email Blasts</button>
+              <button type="button" data-preview-tab="lenders">Lenders</button>
+            </div>
+
+            <div class="preview-pills" data-preview-pills>
+              <span>All Leads</span>
+              <span>Not Called</span>
+              <span>Re-call</span>
+              <span>Interested</span>
+              <span>Callbacks</span>
+            </div>
+
+            <div class="preview-stats" data-preview-stats>
+              <article><strong>3,376</strong><small>Total</small></article>
+              <article><strong>1,913</strong><small>Open</small></article>
+              <article><strong>1,461</strong><small>Completed</small></article>
+              <article><strong>11</strong><small>Interested</small></article>
+            </div>
+
+            <div class="preview-body" data-preview-body>
+              <div class="preview-panel main-panel">
+                <div class="panel-title">
+                  <strong>Current Call</strong>
+                  <span>Ready</span>
+                </div>
+                <div class="call-placeholder">Call activity will appear here.</div>
+                <div class="mini-form">
+                  <label>Sales stage<span>New Lead</span></label>
+                  <label>Time in business<span>Example: 3 years</span></label>
+                  <label>Capital requested<span>Example: $50,000</span></label>
+                  <label>Email<span>merchant@email.com</span></label>
+                </div>
+              </div>
+              <aside class="preview-panel next-card">
+                <span>Up Next</span>
+                <strong>Sample Merchant</strong>
+                <small>Cellphone (800) 414-0335</small>
+                <div>Company</div>
+                <div>Current number</div>
+                <button type="button">Call</button>
+              </aside>
+            </div>
+          </section>
+        </div>
       </div>
     </section>
 
     <section class="problem" id="product">
-      <p class="eyebrow center">The real problem</p>
-      <h2>Your admin system runs the business.<br><span>But who's running the sales floor?</span></h2>
+      <p class="eyebrow center">The problem</p>
+      <h2>Too many tools. Too many subscriptions.<br><span>Sales is always overlooked.</span></h2>
       <div class="problem-grid">
         <article class="list-card">
-          <h3>What your reps deal with every day:</h3>
+          <h3>Most funding teams rely on:</h3>
           <ul>
-            <li>Dialer in one tab, CRM in another</li>
-            <li>Copying numbers into a phone app</li>
-            <li>Callbacks written on sticky notes</li>
-            <li>Emailing docs requests manually</li>
-            <li>"Where's the file?" five times a day</li>
-            <li>No idea what's actually in the pipeline</li>
+            <li>Separate dialer subscription</li>
+            <li>CRM that reps do not use</li>
+            <li>Email platform</li>
+            <li>Spreadsheets and trackers</li>
+            <li>Missing callbacks and follow-ups</li>
+            <li>Lost documents and notes</li>
           </ul>
         </article>
         <article class="tool-orbit" aria-label="Disconnected sales tools">
           <span>Call</span><span>CRM</span><span>Email</span><span>Docs</span><span>Rep</span><span>Data</span>
         </article>
         <article class="list-card">
-          <h3>What it costs you:</h3>
+          <h3>It creates:</h3>
           <ul>
-            <li>Reps make fewer calls per day</li>
-            <li>Callbacks get missed, deals go cold</li>
-            <li>Docs come in late or not at all</li>
-            <li>Leads get duplicated or lost</li>
-            <li>Managers have no visibility</li>
+            <li>Wasted time switching between tools</li>
+            <li>Reps fall behind on callbacks</li>
+            <li>Leads get lost or duplicated</li>
+            <li>Docs are late or missing</li>
+            <li>No clean view of the pipeline</li>
           </ul>
         </article>
         <article class="list-card positive">
-          <h3>What changes with one workspace:</h3>
+          <h3>With The Sales Metrics:</h3>
           <ul>
-            <li>Rep opens one tab. Everything is there.</li>
-            <li>Auto-next dialing — no downtime between calls</li>
-            <li>Callbacks pop up automatically</li>
-            <li>One click to request docs via email</li>
-            <li>Pipeline moves in real time</li>
-            <li>Manager sees every rep, every deal, every metric</li>
+            <li>Everything in one workspace</li>
+            <li>Reps move faster</li>
+            <li>Callbacks stay organized</li>
+            <li>Docs get requested and tracked</li>
+            <li>Managers see real-time metrics</li>
+            <li>More conversations. More deals.</li>
           </ul>
         </article>
       </div>
@@ -104,32 +180,32 @@
 
     <section class="workspace-strip">
       <div class="section-title">
-        <h2>Two workspaces. One platform. Zero excuses.</h2>
-        <p>Your reps need speed. Your managers need clarity. We built both.</p>
+        <h2>Two focused workspaces. One powerful platform.</h2>
+        <p>Built for the people doing the work. Designed for the people leading the team.</p>
       </div>
       <div class="workspace-grid">
         <article class="workspace-card sales-card" id="sales">
           <p class="card-label">Sales workspace</p>
-          <h3>Everything between the<br>first dial and the submission.</h3>
+          <h3>Built for reps<br>who move fast.</h3>
           <ul>
-            <li>Power dialer with auto-next — no wasted seconds</li>
-            <li>Callbacks, voicemails, and no-answers tracked automatically</li>
-            <li>One-click doc requests sent to the merchant's email</li>
-            <li>Full deal file — notes, docs, stage, history — one screen</li>
+            <li>Focused call queue with auto-next</li>
+            <li>Track calls, callbacks, and dispositions</li>
+            <li>Request docs and send emails instantly</li>
+            <li>See everything about the file in one place</li>
           </ul>
-          <a href="/for-sales.html">See Sales Workspace</a>
+          <a href="mailto:alexandra@lexcapitalgroup.net?subject=Sales%20workspace%20demo">See Sales Workspace</a>
           <div class="small-preview sales-preview"></div>
         </article>
         <article class="workspace-card admin-card" id="admins">
           <p class="card-label">Admin workspace</p>
-          <h3>See your floor without<br>standing over anyone's shoulder.</h3>
+          <h3>Built for leaders<br>who need clarity.</h3>
           <ul>
-            <li>Real-time call volume, dispositions, and rep activity</li>
-            <li>Pipeline by stage — from contacted to funded</li>
-            <li>Lead assignment and campaign management</li>
-            <li>Export anything. No waiting for someone to pull a report.</li>
+            <li>Real-time team and rep performance</li>
+            <li>Lead distribution and activity tracking</li>
+            <li>Pipeline and funding stage overview</li>
+            <li>Visibility without micromanaging</li>
           </ul>
-          <a href="/for-admins.html">See Admin Workspace</a>
+          <a href="mailto:alexandra@lexcapitalgroup.net?subject=Admin%20workspace%20demo">See Admin Workspace</a>
           <div class="small-preview admin-preview"></div>
         </article>
       </div>
@@ -137,19 +213,19 @@
 
     <section class="system-row" id="resources">
       <div>
-        <h2>Your reps use six tools. They should use one.</h2>
+        <h2>Replace stacks with one system.</h2>
         <div class="stack-flow">
           <span>Dialer</span><span>CRM</span><span>Email</span><span>Docs</span><span>Follow-ups</span><span>Reporting</span>
         </div>
       </div>
       <strong>SM</strong>
-      <p>One login.<br>One workflow.<br>One place to fund deals.</p>
+      <p>One login.<br>One workflow.<br>One place to grow.</p>
     </section>
 
     <section class="demo-panel" id="demo">
       <div>
-        <h2>More conversations.<br>Better follow-through.<br>More funded deals.</h2>
-        <p>We'll show you how it works in your workflow — not a generic demo. Book 15 minutes and see what your reps would actually use every day.</p>
+        <h2>More conversations.<br>Better follow-up.<br>More funded deals.</h2>
+        <p>Book a demo and we will show how The Sales Metrics helps funding teams simplify their outbound process and close more deals.</p>
         <div class="hero-actions">
           <a class="primary-action" href="mailto:alexandra@lexcapitalgroup.net?subject=The%20Sales%20Metrics%20demo">Book a Demo <span>-></span></a>
           <a class="secondary-action" href="mailto:alexandra@lexcapitalgroup.net?subject=60-second%20demo%20request">Watch 60-Second Demo <span>Play</span></a>
@@ -160,11 +236,11 @@
         <aside>
           <h3>See it in action</h3>
           <ul>
-            <li>Upload a lead list and start calling in minutes</li>
-            <li>Auto-next dialing with cell fallback</li>
-            <li>Request docs with one click</li>
-            <li>Move deals through the pipeline to submission</li>
-            <li>Track every call, every callback, every deal</li>
+            <li>Upload leads in seconds</li>
+            <li>Auto-next calling and callbacks</li>
+            <li>Request documents instantly</li>
+            <li>Move deals through the pipeline</li>
+            <li>Track activity and get funded</li>
           </ul>
           <strong>60-second walkthrough</strong>
         </aside>
@@ -175,56 +251,124 @@
       <div>
         <p class="eyebrow">Pricing</p>
         <h2>Founding customer pricing.</h2>
-        <p class="pricing-note">We're launching with a small group of funding shops who want a better sales floor. Get in early, lock in the rate, shape the product.</p>
+        <p class="pricing-note">Launch with a clean workspace for your team, then add users as you grow.</p>
       </div>
       <div class="pricing-grid">
         <article class="featured-price">
           <h3>Founding Customer Plan</h3>
           <strong>$299/mo</strong>
-          <p>$250 setup. Includes 3 users. Cancel anytime. Your own workspace with your branding.</p>
+          <p>$250 setup. Includes 3 users. Cancel anytime.</p>
           <a href="mailto:alexandra@lexcapitalgroup.net?subject=Founding%20customer%20plan">Book Setup</a>
         </article>
         <article>
           <h3>Team Add-ons</h3>
           <strong>$49/user</strong>
-          <p>Add reps, managers, or admins as your team grows. No contracts.</p>
+          <p>Add more reps, managers, or admins when your team needs access.</p>
         </article>
         <article>
           <h3>Your Workspace</h3>
           <strong>Private</strong>
-          <p>Your logo. Your leads. Your pipeline. Completely separated from every other company on the platform.</p>
+          <p>Add your company logo, keep your team in its own workspace, and separate your leads, notes, documents, and pipeline from other companies.</p>
         </article>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div style="display:flex;flex-wrap:wrap;gap:40px;max-width:960px;margin:0 auto;padding:40px 24px;">
-      <div style="flex:1;min-width:200px;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-          <span style="background:#2563eb;border-radius:8px;color:#fff;font-weight:900;padding:6px 10px;font-size:14px;">SM</span>
-          <strong style="color:#fff;font-size:15px;">The Sales Metrics</strong>
-        </div>
-        <small style="color:#6b7280;font-size:13px;">The tools your sales floor is missing.</small>
-      </div>
-      <div style="display:flex;gap:40px;flex-wrap:wrap;">
-        <div>
-          <strong style="color:#9ca3af;font-size:11px;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:10px;">Product</strong>
-          <a href="/product.html" style="color:#d1d5db;text-decoration:none;font-size:13px;display:block;margin-bottom:6px;">Overview</a>
-          <a href="/for-sales.html" style="color:#d1d5db;text-decoration:none;font-size:13px;display:block;margin-bottom:6px;">For Sales</a>
-          <a href="/for-admins.html" style="color:#d1d5db;text-decoration:none;font-size:13px;display:block;margin-bottom:6px;">For Admins</a>
-          <a href="#pricing" style="color:#d1d5db;text-decoration:none;font-size:13px;display:block;margin-bottom:6px;">Pricing</a>
-        </div>
-        <div>
-          <strong style="color:#9ca3af;font-size:11px;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:10px;">Company</strong>
-          <a href="mailto:alexandra@lexcapitalgroup.net?subject=The%20Sales%20Metrics%20demo" style="color:#d1d5db;text-decoration:none;font-size:13px;display:block;margin-bottom:6px;">Book a Demo</a>
-          <a href="mailto:alexandra@lexcapitalgroup.net?subject=Contact" style="color:#d1d5db;text-decoration:none;font-size:13px;display:block;margin-bottom:6px;">Contact</a>
-        </div>
-      </div>
-    </div>
-    <div style="border-top:1px solid #1f2937;max-width:960px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
-      <span style="color:#4b5563;font-size:12px;">© 2026 The Sales Metrics. All rights reserved.</span>
-    </div>
+    <span>The Sales Metrics</span>
+    <span>Outbound workspace for funding teams.</span>
   </footer>
+  <script>
+    const previewData = {
+      dialer: {
+        title: "Dialer",
+        subtitle: "1,913 open, 1,461 completed.",
+        pills: ["All Leads", "Not Called", "Re-call", "Interested", "Callbacks"],
+        stats: [["3,376", "Total"], ["1,913", "Open"], ["1,461", "Completed"], ["11", "Interested"]],
+        body: `
+          <div class="preview-panel main-panel">
+            <div class="panel-title"><strong>Current Call</strong><span>Ready</span></div>
+            <div class="call-placeholder">Call activity will appear here.</div>
+            <div class="mini-form">
+              <label>Sales stage<span>New Lead</span></label>
+              <label>Time in business<span>Example: 3 years</span></label>
+              <label>Capital requested<span>Example: $50,000</span></label>
+              <label>Email<span>merchant@email.com</span></label>
+            </div>
+          </div>
+          <aside class="preview-panel next-card">
+            <span>Up Next</span>
+            <strong>Sample Merchant</strong>
+            <small>Cellphone (800) 414-0335</small>
+            <div>Company</div><div>Current number</div>
+            <button type="button">Call</button>
+          </aside>`
+      },
+      pipeline: {
+        title: "CRM Pipeline",
+        subtitle: "Track docs, lenders, offers, funding, and dead files.",
+        pills: ["Docs Requested", "Docs Received", "With Lenders", "Offers", "Funded"],
+        stats: [["204", "Active clients"], ["38", "With lenders"], ["14", "Offers"], ["6", "Funded"]],
+        body: `
+          <div class="preview-panel table-panel">
+            <div class="panel-title"><strong>Pipeline Files</strong><span>Live</span></div>
+            <div class="preview-row"><strong>Keystone Energy Group</strong><span>Docs Requested</span><button type="button">Open File</button></div>
+            <div class="preview-row"><strong>KidsWheels LLC</strong><span>With Lenders</span><button type="button">Open File</button></div>
+            <div class="preview-row"><strong>Summit Service Co.</strong><span>Offer Received</span><button type="button">Open File</button></div>
+          </div>`
+      },
+      enrichment: {
+        title: "Lead Enricher",
+        subtitle: "Clean lead data before reps start calling.",
+        pills: ["All Leads", "Needs Research", "Missing Email", "Missing Phone"],
+        stats: [["3,078", "Leads"], ["618", "Need research"], ["412", "Missing email"], ["206", "Ready"]],
+        body: `
+          <div class="preview-panel table-panel">
+            <div class="panel-title"><strong>Research Queue</strong><span>Auto enrich</span></div>
+            <div class="preview-row"><strong>Best Day Ever Clothing</strong><span>3 missing</span><button type="button">Auto Enrich</button></div>
+            <div class="preview-row"><strong>Abilities Diner</strong><span>Website found</span><button type="button">Save</button></div>
+            <div class="preview-row"><strong>West Coast Funding</strong><span>Phone found</span><button type="button">Save</button></div>
+          </div>`
+      },
+      campaigns: {
+        title: "Email Blasts",
+        subtitle: "Validate leads, send tests, and schedule daily batches.",
+        pills: ["Audience", "Campaign", "Template", "Daily limit", "Send window"],
+        stats: [["166", "Recipients"], ["151", "Validated"], ["25", "Daily limit"], ["0", "Invalid"]],
+        body: `
+          <div class="preview-panel table-panel">
+            <div class="panel-title"><strong>Campaign Builder</strong><span>Ready</span></div>
+            <div class="preview-row"><strong>Docs Request</strong><span>alexandra@lexcapitalgroup.net</span><button type="button">Send 25 Today</button></div>
+            <div class="preview-row"><strong>Follow-up</strong><span>Validated leads only</span><button type="button">Send Test</button></div>
+          </div>`
+      },
+      lenders: {
+        title: "Lenders",
+        subtitle: "Keep lender lists organized by category.",
+        pills: ["Test", "A Lenders", "B Lenders", "B-to-C Lenders", "Other"],
+        stats: [["92", "Total"], ["88", "Active"], ["4", "Inactive"], ["5", "Categories"]],
+        body: `
+          <div class="preview-panel table-panel">
+            <div class="panel-title"><strong>Lender Book</strong><span>Shared</span></div>
+            <div class="preview-row"><strong>Vital Cap</strong><span>A Lenders</span><button type="button">Select</button></div>
+            <div class="preview-row"><strong>BCA 247</strong><span>B Lenders</span><button type="button">Select</button></div>
+            <div class="preview-row"><strong>LCF Group</strong><span>B-to-C Lenders</span><button type="button">Select</button></div>
+          </div>`
+      }
+    };
+
+    document.querySelectorAll("[data-preview-tab]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const key = button.dataset.previewTab;
+        const preview = previewData[key];
+        document.querySelectorAll("[data-preview-tab]").forEach((tab) => tab.classList.toggle("is-active", tab === button));
+        document.querySelector("[data-preview-title]").textContent = preview.title;
+        document.querySelector("[data-preview-subtitle]").textContent = preview.subtitle;
+        document.querySelector("[data-preview-pills]").innerHTML = preview.pills.map((pill) => `<span>${pill}</span>`).join("");
+        document.querySelector("[data-preview-stats]").innerHTML = preview.stats.map(([value, label]) => `<article><strong>${value}</strong><small>${label}</small></article>`).join("");
+        document.querySelector("[data-preview-body]").innerHTML = preview.body;
+      });
+    });
+  </script>
 </body>
 </html>
