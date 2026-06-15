@@ -194,7 +194,7 @@ h1 span { color: var(--blue); }
   border-radius: 22px;
   background: #f5f7fb;
   box-shadow: 0 38px 110px rgba(0, 0, 0, .48);
-  transform: rotate(1.4deg);
+  transform: none;
 }
 .preview-rail {
   display: grid;
