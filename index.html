@@ -94,11 +94,11 @@
             </div>
 
             <div class="preview-pills" data-preview-pills>
-              <span>All Leads</span>
-              <span>Not Called</span>
-              <span>Re-call</span>
-              <span>Interested</span>
-              <span>Callbacks</span>
+              <button class="is-active" type="button">All Leads</button>
+              <button type="button">Not Called</button>
+              <button type="button">Re-call</button>
+              <button type="button">Interested</button>
+              <button type="button">Callbacks</button>
             </div>
 
             <div class="preview-stats" data-preview-stats>
@@ -312,9 +312,9 @@
         body: `
           <div class="preview-panel table-panel">
             <div class="panel-title"><strong>Pipeline Files</strong><span>Live</span></div>
-            <div class="preview-row"><strong>Keystone Energy Group</strong><span>Docs Requested</span><button type="button">Open File</button></div>
-            <div class="preview-row"><strong>KidsWheels LLC</strong><span>With Lenders</span><button type="button">Open File</button></div>
-            <div class="preview-row"><strong>Summit Service Co.</strong><span>Offer Received</span><button type="button">Open File</button></div>
+            <div class="preview-row"><strong>Business Example 1</strong><span>Docs Requested</span><button type="button">Open File</button></div>
+            <div class="preview-row"><strong>Business Example 2</strong><span>With Lenders</span><button type="button">Open File</button></div>
+            <div class="preview-row"><strong>Business Example 3</strong><span>Offer Received</span><button type="button">Open File</button></div>
           </div>`
       },
       enrichment: {
@@ -364,9 +364,17 @@
         document.querySelectorAll("[data-preview-tab]").forEach((tab) => tab.classList.toggle("is-active", tab === button));
         document.querySelector("[data-preview-title]").textContent = preview.title;
         document.querySelector("[data-preview-subtitle]").textContent = preview.subtitle;
-        document.querySelector("[data-preview-pills]").innerHTML = preview.pills.map((pill) => `<span>${pill}</span>`).join("");
+        document.querySelector("[data-preview-pills]").innerHTML = preview.pills.map((pill, index) => `<button class="${index === 0 ? "is-active" : ""}" type="button">${pill}</button>`).join("");
         document.querySelector("[data-preview-stats]").innerHTML = preview.stats.map(([value, label]) => `<article><strong>${value}</strong><small>${label}</small></article>`).join("");
         document.querySelector("[data-preview-body]").innerHTML = preview.body;
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      const pill = event.target.closest("[data-preview-pills] button");
+      if (!pill) return;
+      pill.parentElement.querySelectorAll("button").forEach((button) => {
+        button.classList.toggle("is-active", button === pill);
       });
     });
   </script>
